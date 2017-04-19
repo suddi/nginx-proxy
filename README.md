@@ -149,7 +149,7 @@ Finally, start your containers with `VIRTUAL_HOST` environment variables.
     $ docker run -e VIRTUAL_HOST=foo.bar.com  ...
 ### SSL Support using letsencrypt
 
-[letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) is a lightweight companion container for the nginx-proxy. It allow the creation/renewal of Let's Encrypt certificates automatically. 
+[letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) is a lightweight companion container for the nginx-proxy. It allow the creation/renewal of Let's Encrypt certificates automatically.
 
 ### SSL Support
 
@@ -207,12 +207,12 @@ a 500.
 
 To serve traffic in both SSL and non-SSL modes without redirecting to SSL, you can include the
 environment variable `HTTPS_METHOD=noredirect` (the default is `HTTPS_METHOD=redirect`).  You can also
-disable the non-SSL site entirely with `HTTPS_METHOD=nohttp`, or disable the HTTPS site with 
-`HTTPS_METHOD=nohttps`. `HTTPS_METHOD` must be specified on each container for which you want to 
-override the default behavior.  If `HTTPS_METHOD=noredirect` is used, Strict Transport Security (HSTS) 
-is disabled to prevent HTTPS users from being redirected by the client.  If you cannot get to the HTTP 
-site after changing this setting, your browser has probably cached the HSTS policy and is automatically 
-redirecting you back to HTTPS.  You will need to clear your browser's HSTS cache or use an incognito 
+disable the non-SSL site entirely with `HTTPS_METHOD=nohttp`, or disable the HTTPS site with
+`HTTPS_METHOD=nohttps`. `HTTPS_METHOD` must be specified on each container for which you want to
+override the default behavior.  If `HTTPS_METHOD=noredirect` is used, Strict Transport Security (HSTS)
+is disabled to prevent HTTPS users from being redirected by the client.  If you cannot get to the HTTP
+site after changing this setting, your browser has probably cached the HSTS policy and is automatically
+redirecting you back to HTTPS.  You will need to clear your browser's HSTS cache or use an incognito
 window / different browser.
 
 ### Basic Authentication Support
@@ -328,7 +328,7 @@ Before submitting pull requests or issues, please check github to make sure an e
 To run tests, you need to prepare the docker image to test which must be tagged `jwilder/nginx-proxy:test`:
 
     docker build -t jwilder/nginx-proxy:test .  # build the Debian variant image
-    
+
 and call the [test/pytest.sh](test/pytest.sh) script.
 
 Then build the Alpine variant of the image:
@@ -341,6 +341,6 @@ and call the [test/pytest.sh](test/pytest.sh) script again.
 If your system has the `make` command, you can automate those tasks by calling:
 
     make test
-    
+
 
 You can learn more about how the test suite works and how to write new tests in the [test/README.md](test/README.md) file.
